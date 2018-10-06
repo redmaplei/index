@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>wenzan</title>
+    <link rel="stylesheet" href="../css/wenzan.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/wenzan.js"></script>
+    <script type="text/javascript" src="../js/vue.js"></script>
+
+    <script type="text/javascript" src="../js/jsdata.js"></script>
+
+</head>
+<body>
+
+    <div id="head_bar">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+
+                <ul class="nav navbar-nav">
+                    <li><a href="">001</a></li>
+
+                </ul>
+
+            </div>
+        </nav>
+    </div>
+
+    <div id="head_img">
+        <!--<img src="../img/head.jpg">-->
+
+    </div>
+
+    <div id="body">
+
+        <div id="body_navigation_bar">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+
+                    <ul class="nav navbar-nav">
+                        <!-- <li><a href="/page/page?page=001">主页</a></li>
+                    <li><a href="/page/page?page=wenzan">文章</a></li>
+                    <li><a href="/page/page?page=img">图片</a></li> -->
+                    <li><a href="../html/001.html">主页</a></li>
+                    <li><a href="../html/wenzan.html">文章</a></li>
+                    <li><a href="../html/img.html">图片</a></li>
+                    </ul>
+
+                </div>
+            </nav>
+        </div>
+
+        <div id="write_blog">
+            <span id="write_span" class="glyphicon glyphicon-pencil">
+
+            </span>
+            <!--<a id="write_blog_label" href="/page/other?page=writeblog">写博客</a>-->
+            <span id="write_blog_label" onclick="requestpage('writeblog')">写博客</span>
+        </div>
+
+        <div id="body_wenzan">
+            <!--wenzan left-->
+            <!--内容进行分页显示 主页不分页 -->
+            <!--onclick="jumpreadmd()"-->
+            <div id="wenzan_div">
+                <div class="row" v-for="wenzan in wenzans" id="wenzan_row_div">
+                    <div id="wenzan_title_span" style="cursor: pointer">
+                        <a  style="color: black;cursor: pointer" id="wenzan_blogtitle" @click="jumpreadmd($event)">
+                            {{ wenzan.blogtitle }}
+                        </a>
+                    </div>
+                    <div id="wenzan_content_span">
+                        <p>
+                            {{ wenzan.markdowninfo }}
+                        </p>
+                    </div>
+                    <div id="wenzan_time_span">
+                        <span>
+                            {{ wenzan.writetime }}
+                        </span>
+                    </div>
+                    <br>
+                    <br>
+                    <hr>
+                </div>
+            </div>
+        </div>
+
+        <nav aria-label="...">
+            <ul class="pager">
+                <li><a href="#">上一页</a></li>
+                <li><a href="#">下一页</a></li>
+            </ul>
+        </nav>
+
+    </div>
+
+
+
+    <div id="bottom">
+        <span id="bottom_span">
+            _001_bg_
+        </span>
+    </div>
+
+
+
+    <script>
+
+        var nowpage = 1;
+        var maxpage = 0;
+        var wenzan_vue = new Vue({
+            el:'#wenzan_div',
+            data:{
+                wenzans: [
+                    {blogtitle:"",writetime:"",markdowninfo:"",markdownstring:""}
+                ],
+            },
+            methods:{
+                //
+                jumpreadmd: function(event) {
+                    var el = event.currentTarget;
+                    /**
+                     * 通过jsdata.js文件来存跳转需要的变量，
+                     * 这种方式不成功
+                     * @type {string}
+                     */
+                    blogtitle = el.innerText;
+                    localStorage.setItem("blogtitle",blogtitle);
+                    window.location.href="../html/blogread.html";
+                }
+
+            }
+
+        });
+
+        function requestpage(page) {
+            var url = "http://localhost:8080/page/other"+"?page="+page;
+            $.ajax({
+                url:url,
+                type:'GET',
+                contentType:'application/json; charset=utf-8',
+                success:function (data) {
+                 //   console.log(data);
+                    if(data == "NO_LOGIN") {
+                        alert("NO_LOGIN");
+                    }else if(data = "LOGIN_SUCCESS") {
+                        alert("LOGIN_SUCCESS");
+                        pagejump(page);
+                    }
+                }
+            });
+        }
+
+    </script>
+
+</body>
+
+
+
+</html>

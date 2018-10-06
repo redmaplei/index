@@ -1,0 +1,18 @@
+{
+	"url": {
+		"get_files_url": "http://192.168.3.234:8080/disk/files/get",
+		"create_files_url": "http://192.168.3.234:8080/disk/files/create",
+		"upload_files_url": "http://192.168.3.234:8080/disk/files/upload",
+		"merge_files_url": "http://192.168.3.234:8080/disk/files/merge",
+		"check_md5_url": "http://192.168.3.234:8080/disk/files/check-md5",
+		"insert_fileInfo_url": "http://192.168.3.234:8080/disk/files/insert-fileInfo",
+		"delete_file_url": "http://192.168.3.234:8080/disk/files/delete-file",
+		"rename_file_url": "http://192.168.3.234:8080/disk/files/rename",
+		"copyto_files_url": "http://192.168.3.234:8080/disk/files/copyto",
+		"moveto_files_url": "http://192.168.3.234:8080/disk/files/moveto"
+	},	
+
+		
+	
+
+}

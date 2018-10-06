@@ -1,0 +1,46 @@
+#write_blog_top {
+    width: 100%;
+    height: 100px;
+    float: left;
+}
+
+#write_blog_body {
+    width: 100%;
+    height: 1000px;
+}
+
+
+#write_blog_logo {
+    width: 50px;
+    height: 50px;
+    margin-top: 30px;
+    margin-left:120px;
+    float: left;
+}
+
+#write_blog_right_info {
+    float: right;
+    margin-top: 30px;
+    margin-right: 100px;
+}
+
+#write_blog_footer {
+    width: 100%;
+    height: 100px;
+}
+
+#write_blog_footer_logo {
+
+}
+
+.w_label {
+    font-size: 16px;
+}
+
+#write_blog_save_release {
+    margin-left: 10px;
+}
+
+#write_blog_exit_btn {
+    margin-left: 10px;
+}

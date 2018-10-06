@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>blogread</title>
+
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/blogread.css">
+
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+
+    <script src="../editormd/examples/js/jquery.min.js"></script>
+    <script src="../editormd/lib/marked.min.js"></script>
+    <script src="../editormd/lib/prettify.min.js"></script>
+    <script src="../editormd/lib/raphael.min.js"></script>
+    <script src="../editormd/lib/underscore.min.js"></script>
+    <script src="../editormd/lib/sequence-diagram.min.js"></script>
+    <script src="../editormd/lib/flowchart.min.js"></script>
+    <script src="../editormd/lib/jquery.flowchart.min.js"></script>
+    <script src="../editormd/editormd.js"></script>
+
+    <script type="text/javascript" src="../js/vue.js"></script>
+
+    <script type="text/javascript" src="../js/jsdata.js"></script>
+
+    <script type="text/javascript" src="../js/blogread.js"></script>
+
+
+</head>
+<body>
+
+<div id="blog_read_top_img_div">
+    <img id="blog_read_top_img" src="../img/head.jpg">
+</div>
+
+<div id="blog_read_top">
+
+    <div id="body_navigation_bar">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+
+                <ul class="nav navbar-nav">
+                    <li><a href="/page/page?page=001">主页</a></li>
+                    <li><a href="/page/page?page=wenzan">文章</a></li>
+                    <li><a href="/page/page?page=img">图片</a></li>
+
+                </ul>
+
+            </div>
+        </nav>
+
+    </div>
+
+
+</div>
+
+<div id="blog_read_body">
+    <hr style="border: 1px solid red">
+    <div id="blog_read_info">
+
+        <h2 id="blog_read_title">
+            {{ wenzan.blogtitle }}
+        </h2>
+            {{ wenzan.d }}
+        <h6 id="blog_read_time">
+            {{ wenzan.writetime }}
+        </h6>
+
+    </div>
+
+    <div id="blog_read_editormd">
+        <textarea id="blog_read_textera" placeholder="markdown语言">
+
+            <!--{{ blogcontent }}-->
+
+
+        </textarea>
+
+    </div>
+
+
+
+</div >
+<hr>
+
+<div id="blog_read_footer">
+
+</div>
+
+
+
+
+<script>
+
+    var blog_read_info_vue = new Vue({
+
+        el:'#blog_read_info',
+        data:{
+            wenzan: [
+                {blogtitle:"sss",writetime:"sss",markdowninfo:"",markdownstring:""}
+            ],
+            d:"sdfsd",
+        },
+
+    });
+
+    var blog_read_editormd_vue = new Vue({
+
+        el:'#blog_read_editormd',
+        data:{
+            blogcontent:"loading.....",
+        },
+
+    });
+
+
+
+</script>
+
+</body>
+</html>
