@@ -16,25 +16,6 @@
 </head>
 <body>
 
-    <!-- <div id="head_bar">
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-
-                <ul class="nav navbar-nav">
-                    <li><a href="">001</a></li>
-
-                </ul>
-
-            </div>
-        </nav>
-    </div> -->
-
-    <!-- <div id="head_img">
-        <img src="../img/head.jpg">
-
-    </div> -->
-
-
     <div id="head_background" >
 
         <div id="body_navigation_bar">
@@ -63,25 +44,25 @@
             <span id="write_blog_label" onclick="requestpage('writeblog')">写博客</span>
         </div>  -->
 
-        <div id="body_wenzan">
-            <!--wenzan left-->
+        <div id="body_article">
+            <!--article left-->
             <!--内容进行分页显示 主页不分页 -->
             <!--onclick="jumpreadmd()"-->
-            <div id="wenzan_div">
-                <div class="row" v-for="wenzan in wenzans" id="wenzan_row_div">
-                    <div id="wenzan_title_span" style="cursor: pointer">
-                        <a  style="color: black;cursor: pointer" id="wenzan_blogtitle" @click="jumpreadmd($event)">
-                            {{ wenzan.blogtitle }}
+            <div id="article_div">
+                <div class="row" v-for="article in articles" id="article_row_div">
+                    <div id="article_title_span" style="cursor: pointer">
+                        <a  style="color: black;cursor: pointer" id="article_blogtitle" @click="jumpreadmd($event)">
+                            {{ article.blogtitle }}
                         </a>
                     </div>
-                    <div id="wenzan_content_span">
+                    <div id="article_content_span">
                         <p>
-                            {{ wenzan.markdowninfo }}
+                            {{ article.markdowninfo }}
                         </p>
                     </div>
-                    <div id="wenzan_time_span">
+                    <div id="article_time_span">
                         <span>
-                            {{ wenzan.writetime }}
+                            {{ article.writetime }}
                         </span>
                     </div>
                     <br>
@@ -100,24 +81,19 @@
 
     </div>
 
+    <div id="footer">
 
-
-    <div id="bottom">
-        <span id="bottom_span">
-            _001_bg_
-        </span>
     </div>
-
 
 
     <script>
 
         var nowpage = 1;
         var maxpage = 0;
-        var wenzan_vue = new Vue({
-            el:'#wenzan_div',
+        var article_vue = new Vue({
+            el:'#article_div',
             data:{
-                wenzans: [
+                articles: [
                     {blogtitle:"",writetime:"",markdowninfo:"",markdownstring:""}
                 ],
             },

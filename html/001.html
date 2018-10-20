@@ -23,15 +23,10 @@
             <div class="container-fluid">
 
                 <ul class="nav navbar-nav">
-                    <!-- <li><a href="/page/page?page=001">主页</a></li>
-                    <li><a href="/page/page?page=wenzan">文章</a></li>
-                    <li><a href="/page/page?page=img">图片</a></li> -->
                     <li><a href="../html/001.html">主页</a></li>
                     <li><a href="../html/article.html">文章</a></li>
                     <li><a href="../html/img.html">图片</a></li>
                     <li><a href="">归档</a></li>
-                    <!-- <li><a href="#">东西</a></li>
-                    <li><a href="#">访客</a></li> -->
                 </ul>
                 <ul class="nav navbar-nav" style="float: right">
                     <li ><a href="../html/adminlogin.html">-001</a></li>
@@ -75,11 +70,11 @@
             <div id="person_infocard" >
                 <div class="single-member effect-1">
                     <div class="member-image">
-                        <img src="../img/member_140x145.jpg" alt="Member">
+                        <img src="../img/member140.png" alt="Member">
                     </div>
                     <div class="member-info">
-                        <h4>Sophia</h4>
-                        <h5>ShowGilr</h5>
+                        <h4>REDMAPLE</h4>
+                        <h5>-001</h5>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
                         <div class="social-touch">
                             <a class="fb-touch" href="#"></a>
@@ -98,7 +93,7 @@
 
     <div id="body_wenzan">
         <!--wenzan left-->
-        <!--内容进行分页显示 主页不分页 -->
+        <!--内容进行分页显示 主页不分页 现在显示最新的5篇 -->
         <div id="head_wenzan_left">
             <div id="wenzan_div">
                 <div class="row" v-for="wenzan in wenzans" id="wenzan_row_div">
@@ -132,7 +127,7 @@
                 <div style="width: 300px; margin:0 auto;" >
 
                     <div class="wrapper">
-                        <h1  class="site-header__title">旅行者的时间表</h1>
+                        <h1  class="site-header__title">一些时间线</h1>
                     </div>
 
                 </div>
@@ -224,10 +219,6 @@
                 {blogtitle: "tomcat的使用", writetime: "2018/7/29 17:56", markdowninfo: "tomcat是一个web服务器的容器", markdownstring: ""},
                 {blogtitle: "jdl的简单使用", writetime: "2018/7/29 17:56", markdowninfo: "jdl是jhipster官方推出的一个实体域管理语言,可以更好的管理spring-boot项目中的实体", markdownstring: ""},
                 {blogtitle: "webservice理解", writetime: "2018/7/29 17:56", markdowninfo: "把通用的服务抽取出来，构造一个中间件", markdownstring: ""},
-                // {blogtitle: "tomcat的使用", writetime: "2018/7/29 17:56", markdowninfo: "tomcat是一个web服务器的容器", markdownstring: ""},
-                // {blogtitle: "tomcat的使用", writetime: "2018/7/29 17:56", markdowninfo: "tomcat是一个web服务器的容器", markdownstring: ""},
-                // {blogtitle: "tomcat的使用", writetime: "2018/7/29 17:56", markdowninfo: "tomcat是一个web服务器的容器", markdownstring: ""}
-                
             ],
         },
         methods: {

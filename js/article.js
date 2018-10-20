@@ -1,7 +1,18 @@
 
 $(function () {
 
-    var page = 1;
+    var a = 1;
+
+    pagemd(a);
+   
+
+});
+
+/**
+ * 请求article函数
+ * @param {*页数} page 
+ */
+function pagemd(page) {
 
     var url = "http://localhost:8080/md/getPagemd?page="+page;
     $.ajax({
@@ -10,14 +21,14 @@ $(function () {
         dataType:"json",
         contentType:'application/json; charset=UTF-8',
         // data:"page":1,
-        //"application/x-www-form-urlencoded; charset=utf-8",
-//                        data:JSON.stringify(this.user), parse
-        //JSON.parse(data)
         success:function (data) {
             console.log(data);
-            wenzan_vue.wenzans = data;
-            // console.log("sd"+wenzan_vue.wenzans);
+            article_vue.articles = data;
         }
     });
 
-});
+}
+
+function turnpage() {
+    
+}
