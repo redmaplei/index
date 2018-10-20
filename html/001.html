@@ -27,13 +27,14 @@
                     <li><a href="/page/page?page=wenzan">文章</a></li>
                     <li><a href="/page/page?page=img">图片</a></li> -->
                     <li><a href="../html/001.html">主页</a></li>
-                    <li><a href="../html/wenzan.html">文章</a></li>
+                    <li><a href="../html/article.html">文章</a></li>
                     <li><a href="../html/img.html">图片</a></li>
-                    <li><a href="#">东西</a></li>
-                    <li><a href="#">访客</a></li>
+                    <li><a href="">归档</a></li>
+                    <!-- <li><a href="#">东西</a></li>
+                    <li><a href="#">访客</a></li> -->
                 </ul>
                 <ul class="nav navbar-nav" style="float: right">
-                    <li ><a >-001</a></li>
+                    <li ><a href="../html/adminlogin.html">-001</a></li>
                 </ul>
             </div>
         </nav>
@@ -104,19 +105,17 @@
                     <div id="wenzan_title_span">
                         <a style="color: black;cursor: pointer" @click="jumpreadmd($event)">
                             {{ wenzan.blogtitle }}
-                            <!-- title -->
-                            <!-- {{ wenzan.blogtitle }} -->
                         </a>
                     </div>
-                    <div id="wenzan_content_span">
-                        <p>
+                    <div id="wenzan_content_span" >
+                        <p style="color: black; font-size: 20px; ">
                             {{ wenzan.markdowninfo }}
                         </p>
                     </div>
                     <br>
                     <br>
                     <div id="wenzan_time_span">
-                        <span>
+                        <span style="font-size: 16px;float: right;">
                             {{ wenzan.writetime }}
                         </span>
                     </div>

@@ -11,6 +11,14 @@
 
     <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
 
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <script type="text/javascript" src="../js/blogread.js"></script>
+
+    <!-- 引入样式文件 -->
+    <link rel="stylesheet" href="../editormd/examples/css/style.css">
+    <link rel="stylesheet" href="../editormd/css/editormd.preview.css">
+
+    <!-- 引入js文件 -->
     <script src="../editormd/examples/js/jquery.min.js"></script>
     <script src="../editormd/lib/marked.min.js"></script>
     <script src="../editormd/lib/prettify.min.js"></script>
@@ -21,11 +29,6 @@
     <script src="../editormd/lib/jquery.flowchart.min.js"></script>
     <script src="../editormd/editormd.js"></script>
 
-    <script type="text/javascript" src="../js/vue.js"></script>
-
-    <script type="text/javascript" src="../js/jsdata.js"></script>
-
-    <script type="text/javascript" src="../js/blogread.js"></script>
 
 
 </head>
@@ -42,9 +45,10 @@
             <div class="container-fluid">
 
                 <ul class="nav navbar-nav">
-                    <li><a href="/page/page?page=001">主页</a></li>
-                    <li><a href="/page/page?page=wenzan">文章</a></li>
-                    <li><a href="/page/page?page=img">图片</a></li>
+                    <li><a href="../html/001.html">主页</a></li>
+                    <li><a href="../html/article.html">文章</a></li>
+                    <li><a href="../html/img.html">图片</a></li>
+                    <li><a href="">归档</a></li>
 
                 </ul>
 
@@ -58,28 +62,64 @@
 
 <div id="blog_read_body">
     <hr style="border: 1px solid red">
-    <div id="blog_read_info">
 
-        <h2 id="blog_read_title">
-            {{ wenzan.blogtitle }}
-        </h2>
-            {{ wenzan.d }}
-        <h6 id="blog_read_time">
-            {{ wenzan.writetime }}
-        </h6>
+    <div id="read">
+        <div id="blog_read_info">
+            <h2 id="blog_read_title">
+                {{ article.blogtitle }}
+            </h2>
+            <h6 id="blog_read_time">
+                {{ article.writetime }}
+            </h6>
+        </div>
 
+        <div id="blog_read_editormd">
+            <textarea id="read_textera" style="width:1000px; height:800px">
+              
+             
+                <!-- {{ article.writetime }}
+                {{ article.mdContent }} -->
+
+####   hadoop命令需在hadoop目录下使用
+**常用命令**
+        
+            HDFS格式化:
+            bin/hadoop namenode -format    格式化namenode
+            bin/hadoop datanode -format    格式化datanode
+
+            
+*如不是第一次格式化，为了保证clusterID一致性,
+*需先删除hdfs临时目录,即在配置文件中配置的hadoop.tmp.dir参数路径
+
+```java
+String s
+@RestController
+public void t() {
+
+    @Autoriwed
+    UserResporitory userResporitory;
+
+}
+```
+# read-index
+
+#### 项目介绍
+new-read-blog-index
+
+vue
+
+md框架
+
+bootstrap
+
+jquery特效 框架
+
+---
+    
+            </textarea>
+
+        </div>
     </div>
-
-    <div id="blog_read_editormd">
-        <textarea id="blog_read_textera" placeholder="markdown语言">
-
-            <!--{{ blogcontent }}-->
-
-
-        </textarea>
-
-    </div>
-
 
 
 </div >
@@ -89,31 +129,48 @@
 
 </div>
 
-
-
-
 <script>
 
     var blog_read_info_vue = new Vue({
 
+        // el:'#read',
         el:'#blog_read_info',
         data:{
-            wenzan: [
-                {blogtitle:"sss",writetime:"sss",markdowninfo:"",markdownstring:""}
+            article: [
+                {blogtitle:"sss",writetime:"sss",markdowninfo:"",mdsrc:"",mdContent:""}
             ],
-            d:"sdfsd",
         },
 
     });
 
-    var blog_read_editormd_vue = new Vue({
+    // var read_vue = new Vue({
 
-        el:'#blog_read_editormd',
-        data:{
-            blogcontent:"loading.....",
-        },
+    //     el:'#',
+    //     data:{
+    //         md:"xvxcvxcvxv",
+    //     },
 
-    });
+    // });
+
+
+    // var read_vue = new Vue({
+
+    //     el:'#zx',
+    //     data:{
+    //         content:"loading ",
+    //     },
+
+    // });
+
+    // var blog_read_editormd_vue = new Vue({
+
+    //     // el:'#read',
+    //     el:'#blog_read_editormd',
+    //     data:{
+    //         mdContent:" loading... ",
+    //     },
+
+    // }); 
 
 
 

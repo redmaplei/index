@@ -26,6 +26,7 @@ $(function () {
 
     // });
 
+    // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
     var urlread = "http://127.0.0.1:8080/md/getnewmd";
 
     $.ajax({
@@ -45,6 +46,34 @@ $(function () {
 
     });
 
+
+    // var fids = "sdfsd";
+    // var encrypt = "true";
+    // var expireTime = 7;
+
+    // $.ajax({
+    //     url: "http://192.168.2.86:8080/share/create",
+    //     dataType: 'json',
+    //     type: 'post',
+    //     data:{
+    //     		"fids": fids,"encrypt": encrypt,"expireTime": expireTime
+    //     },
+    //     beforeSend: function (xhr) {
+    //         xhr.setRequestHeader("Test", "testheadervalue");
+
+    //     },
+    //     async: false,
+    //     cache: false,
+    //     //contentType: 'application/x-www-form-urlencoded',
+    //     success: function (sResponse) {
+
+    //         console.log(sResponse);
+
+    //     }
+        
+
+    // });
+
     // var urlpan = "http://192.168.2.239:8080/disk/files/get?page=1&limit=10&pid=1";
 
     // $.ajax({
@@ -57,9 +86,9 @@ $(function () {
     //         console.log(data);
 
     //     },
-    //     error: function() {
-    //         console.log("xsss");
-    //     }
+        // error: function() {
+        //     console.log("xsss");
+        // }
 
     // });
 

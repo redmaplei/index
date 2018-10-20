@@ -14,55 +14,40 @@
 </head>
 <body>
 
-<div id="head_bar">
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
+<!-- <div id="head_img">
+    <img src="../img/head.jpg">
+</div> -->
 
-            <ul class="nav navbar-nav">
-                <li><a href="">001</a></li>
 
-            </ul>
+    <div id="head_background" >
+        <div id="body_navigation_bar">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
 
+                    <ul class="nav navbar-nav">
+                        <li><a href="../html/001.html">主页</a></li>
+                        <li><a href="../html/article.html">文章</a></li>
+                        <li><a href="../html/img.html">图片</a></li>
+                        <li><a href="">归档</a></li>
+                    </ul>
+
+                </div>
+            </nav>
         </div>
-    </nav>
-</div>
-
-<div id="head_img">
-    <!--<img src="../img/head.jpg">-->
-</div>
-
-<div id="body">
-
-    <div id="body_navigation_bar">
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-
-                <ul class="nav navbar-nav">
-                   <!-- <li><a href="/page/page?page=001">主页</a></li>
-                    <li><a href="/page/page?page=wenzan">文章</a></li>
-                    <li><a href="/page/page?page=img">图片</a></li> -->
-                    <li><a href="../html/001.html">主页</a></li>
-                    <li><a href="../html/wenzan.html">文章</a></li>
-                    <li><a href="../html/img.html">图片</a></li>
-                </ul>
-
-            </div>
-        </nav>
     </div>
 
-    <div id="body_wenzan">
-            <div class="content_div" id="new_img_show">
+    <div id="body">
+        <div class="content_div" id="new_img_show">
 
-                <div class="row" >
-                    <div class="col-md-5 new_img_show_s"  v-for="img in imgs">
-                        <img  class="img_show" v-bind:src=" img.src "/>
-                    </div>
+            <div class="row" >
+                <div class="col-md-5 new_img_show_s"  v-for="img in imgs">
+                    <img  class="img_show" v-bind:src=" img.src "/>
                 </div>
             </div>
-
-            <hr>
-
         </div>
+
+        <hr>
+
     </div>
 
 

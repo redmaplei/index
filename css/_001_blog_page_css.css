@@ -17,12 +17,12 @@
 
 #body {
     width: 1200px;
-    height: 1650px;
+    height: 2000px;
     margin: 0px auto;
 }
 
 #body_navigation_bar {
-    margin-top: 30px;
+    margin-top: 50px;
     width: 1200px;
     height: 50px;
 }
@@ -75,7 +75,7 @@
 
 #wenzan_hr {
     float: left;
-    width: 550px;
+    width: 100%;
 }
 
 .content_div {
@@ -147,6 +147,8 @@
     padding-bottom: 30px;
 
 }
+
+
 
 #cotent_privide {
     margin-top: 20px;
