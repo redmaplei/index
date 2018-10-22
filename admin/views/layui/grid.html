@@ -6,13 +6,26 @@
             文章：
             
           </div>
+          
+          <button data-method="offset" data-type="t" class="layui-btn layui-btn-normal">上弹出</button>
+
           <div class="layui-card-body">
 
               <div class="panel panel-default">
                   <!-- Default panel contents -->
-                  <div class="panel-heading" >markdown</div>
+                  <div class="panel-heading bg-primary" style="color:red ;">
+                        MARKDOWN
+                
+                        <button class="btn btn-primary btn-sm" style="float:right;margin: 0 0;"  @click="addmd()">
+                                添加文章
+                        </button>
+
+                    </div>
+                  <!-- <div id="addmd" style="float:right; margin-top: 10px; margin-bottom: 10px; padding-right: 50px">
+                       
+                    </div> -->
                   <!-- Table -->
-                  <table id="mdtable" class="table">
+                  <table id="mdtable" class="table " style="margin-top:10px;">
                    <thead>
                       <tr class="success">
                           <th width="5%" style="text-align:center;">序号</th>
@@ -48,15 +61,12 @@
                   </table>
                   
                 </div>
-                <div id="addmd" style="float:right; padding-right: 30px">
-                    <button class="btn btn-primary btn-sm"  @click="deletemd(article.blogtitle)">
-                            添加文章
-                    </button>
-                </div>
+                
                
-
+                
            
           </div>
+
         </div>
       </div>
     </div>

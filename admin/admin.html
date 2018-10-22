@@ -6,15 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>001</title>
 
-  <link rel="stylesheet" href="css/layui.css" id="layui">
-  <link rel="stylesheet" href="css/theme/default.css" id="theme">
-  <link rel="stylesheet" href="css/kitadmin.css" id="kitadmin">
   <link rel="stylesheet" href="../css/bootstrap.min.css">
   <link rel="stylesheet" href="../css/bootstrap.css">
 
-  <script type="text/javascript" src="../js/vue.js"></script>
   <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="../js/vue-resource.min.js"></script>
   <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../js/vue.js"></script>
+  <script type="text/javascript" src="../js/jquery.waypoints.min.js"></script>
+  <script type="text/javascript" src="layui.js"></script>
+
+  <link rel="stylesheet" href="css/layui.css" id="layui">
+  <link rel="stylesheet" href="css/theme/default.css" id="theme">
+  <link rel="stylesheet" href="css/kitadmin.css" id="kitadmin">
 
   <script type="text/javascript" src="js/admin.js"></script>
 
@@ -38,9 +42,8 @@
       <div class="layui-layout-right">
          
           <div style="height:100%; margin: 12px 0;">
-              <a style="color:white; cursor: pointer;" > 退出 </a>
+              <button id="logout" class="btn btn-primary btn-sm logout" data-toggle="modal" onclick="logout()"> 退出 </button>
           </div>
-
 
       </div>
     </div>
@@ -63,9 +66,7 @@
                 <a href="#/layui/code">
                   <span>设置</span>
                 </a>
-            </li>
-            
-            
+            </li>       
         </div>
       </div>
     </div>
