@@ -19,26 +19,26 @@
 
  });
 
-function logout1() {
-    // layer.open({
+// function logout1() {
+//     // layer.open({
 
-    //     title:"退出",
-    // });
-    layer.alert("确认退出吗", {
-        yes: function() {
-            layer.msg("退出成功");
-            location.reload();
-        }
+//     //     title:"退出",
+//     // });
+//     layer.alert("确认退出吗", {
+//         yes: function() {
+//             layer.msg("退出成功");
+//             location.reload();
+//         }
         
-    });
-}
+//     });
+// }
 
 function logout() {
 
     layer.open({
         title:"退出",
         btn: ['确定', '取消'],
-        // area: ['575px', '350px'], //宽高
+        content: "确认退出吗?",
         btn1: function() {
             layer.msg("退出成功");
             location.reload();
@@ -47,5 +47,4 @@ function logout() {
 
         }
     })
-
 }
