@@ -2,7 +2,7 @@
 
 $(function () {
 
-    var url = "http://127.0.0.1:8090/markdown/getAllMarkDownVO"
+    // var url = "http://127.0.0.1:8090/markdown/getAllMarkDownVO"
     // var url = "http://www.redwys.xyz/markdown/getAllMarkDownVO";
     //var blogtitle = "tomcat的使用";
     //var url = "http://localhost:8080/markdown/getOneBlogToTitle?blogTitle="+blogtitle;

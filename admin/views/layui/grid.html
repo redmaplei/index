@@ -1,0 +1,97 @@
+<div class="layui-fluid">
+    <div class="layui-row">
+      <div class="layui-col-xs12">
+        <div class="layui-card">
+          <div class="layui-card-header">
+            文章：
+            
+          </div>
+          <div class="layui-card-body">
+
+              <div class="panel panel-default">
+                  <!-- Default panel contents -->
+                  <div class="panel-heading" >markdown</div>
+                  <!-- Table -->
+                  <table id="mdtable" class="table">
+                   <thead>
+                      <tr class="success">
+                          <th width="5%" style="text-align:center;">序号</th>
+                          <th width="20%" style="text-align:center;">标题</th>
+                          <th width="40%" style="text-align:center;">描述</th>
+                          <th width="20%" style="text-align:center;">时间</th>
+                          <th width="15%" style="text-align:center;">操作</th>
+                      </tr>
+                      </thead>
+                      <tbody  v-for="article in articles">
+                            <tr >
+                                <td style="text-align:center;" > {{ article.id }} </td>
+                                <td id="blogtitletd" style="text-align:center;"> {{ article.blogtitle }}  </td>
+                                <td style="text-align:center;"> {{ article.markdowninfo }} </td>
+                                <td style="text-align:center;"> {{ article.writetime }} </td>
+                                <td style="text-align:center;">
+                                <div class="btn-group flex-btn-group-container"> 
+                                    <button id="viewbutton" class="btn btn-info btn-sm" @click="jumpreadmd(article.blogtitle)">
+                                        查看
+                                    </button>
+                                    <button class="btn btn-primary btn-sm" @click="editormd(article.blogtitle)">
+                                        编辑
+                                    </button>
+                                    <button class="btn btn-danger btn-sm"  @click="deletemd(article.blogtitle)">
+                                        删除
+                                    </button>
+                                </div>
+                                </td>
+                            </tr>
+                                  
+                      </tbody>
+
+                  </table>
+                  
+                </div>
+                <div id="addmd" style="float:right; padding-right: 30px">
+                    <button class="btn btn-primary btn-sm"  @click="deletemd(article.blogtitle)">
+                            添加文章
+                    </button>
+                </div>
+               
+
+           
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+<script>
+
+var mdvue = new Vue({
+
+    el:'#mdtable',
+    data: {
+        articles: [
+            {blogtitle:"asds",writetime:"",markdowninfo:"",markdownstring:"",id:"23"},
+            {blogtitle:"区块链",writetime:"",markdowninfo:"",markdownstring:""},
+        ],
+    },
+    methods:{
+        
+        jumpreadmd: function(blogtitle) {
+            localStorage.setItem("blogtitle",blogtitle);
+            window.open("../html/blogread.html");
+            // window.location.href="../html/blogread.html";
+
+        },
+        
+        editormd: function(blogtitle) {
+            alert(blogtitle);
+        },
+
+        deletemd: function(blogtitle) {
+            alert(blogtitle);
+        }
+    }
+
+});
+
+
+</script>

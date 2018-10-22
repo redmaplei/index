@@ -26,6 +26,7 @@
     width: 1000px;
     min-height: 1000px;
     margin: 20px auto;
+    margin-bottom: 100px;
 }
 
 #blog_read_editormd {
@@ -78,4 +79,22 @@
 
 #blog_read_time {
     float: right;
+}
+
+#comment_tip {
+    width: 100%;
+    height: 30px;
+}
+#comment_tip span {
+    float: left;
+    font-size: 25px;
+}
+
+#comment {
+    height: 300px;
+    margin-top: 50px;
+    margin-bottom: 250px;
+    width: 1000px;
+    margin: 20px auto;
+
 }
