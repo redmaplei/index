@@ -186,9 +186,12 @@
     var $ = layui.jquery,
       layer = layui.layer,
       table = layui.table;
+    
+    // var echarts = true;
 
     var intervalIndex = setInterval(function() {
       if (echarts === undefined) {
+        alert(194);
         return;
       }
       // 如果eacharts加载完成，则清除循环
@@ -274,6 +277,7 @@
       }
 
       // echart2
+      var option2;
 
       if (option2 && typeof option2 === "object") {
         myChart2.setOption(option2, true);
@@ -282,7 +286,7 @@
       $(window).on('resize', function() {
         myChart.resize();
         myChart1.resize();
-        myChart2.resize();
+        // myChart2.resize();
       });
     }, 50);
 

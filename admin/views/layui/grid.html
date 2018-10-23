@@ -1,3 +1,4 @@
+
 <div class="layui-fluid">
     <div class="layui-row">
       <div class="layui-col-xs12">
@@ -7,23 +8,21 @@
             
           </div>
           
-          <button data-method="offset" data-type="t" class="layui-btn layui-btn-normal">上弹出</button>
 
           <div class="layui-card-body">
 
+            
               <div class="panel panel-default">
                   <!-- Default panel contents -->
                   <div class="panel-heading bg-primary" style="color:red ;">
                         MARKDOWN
                 
-                        <button class="btn btn-primary btn-sm" style="float:right;margin: 0 0;"  @click="addmd()">
+                        <button id="addmd" class="btn btn-primary btn-sm" style="float:right;margin: 0 0;"  onclick="addmd()">
                                 添加文章
                         </button>
 
-                    </div>
-                  <!-- <div id="addmd" style="float:right; margin-top: 10px; margin-bottom: 10px; padding-right: 50px">
-                       
-                    </div> -->
+                  </div>
+                
                   <!-- Table -->
                   <table id="mdtable" class="table " style="margin-top:10px;">
                    <thead>
@@ -72,6 +71,72 @@
     </div>
   </div>
   
+  <div id="addmd_div" style="display:none;">
+
+    <!-- style="width:100%;" -->
+
+  <div class="row " >
+        <div class="col-lg-6" style="width:50%;float: left;">
+          <div class="input-group" >
+            <span class="input-group-btn">
+              <button class="btn btn-default btn-primary" type="button">标题</button>
+            </span>
+            <input type="text" v-model="article.blogtitle" class="form-control blogtitle" placeholder="Title...">
+            <span> -- {{ article.blogtitle }} </span>
+        </div><!-- /input-group -->
+        </div><!-- /.col-lg-6 -->
+
+        <div class="col-lg-6" style="width:50%;float: left;">
+          <div class="input-group">
+            <span class="input-group-btn">
+              <button class="btn btn-default btn-primary markdowninfo" type="button">描述</button>
+            </span>
+            <input type="text" class="form-control" v-model="article.markdowninfo" placeholder="Info...">
+          </div><!-- /input-group -->
+        </div><!-- /.col-lg-6 -->
+
+        <div class="col-lg-6" style="width:40%;float: left;margin-top: 20px;">
+                <div class="input-group">
+                  <span class="input-group-btn">
+                    <button class="btn btn-default btn-primary catogery" type="button">分类</button>
+                  </span>
+                  <input type="text" class="form-control" v-model="article.catogery"  placeholder="catogery...">
+                </div><!-- /input-group -->
+              </div><!-- /.col-lg-6 -->
+
+        <div class="col-lg-6" style="width:60%;float: left; margin-top: 20px;">
+            <div class="input-group">
+              <span class="input-group-btn">
+                <button class="btn btn-default btn-primary writetime" type="button">时间</button>
+              </span>
+              <input type="datetime-local" class="form-control" v-model="article.writetime"  placeholder="Time...">
+            </div><!-- /input-group -->
+        </div><!-- /.col-lg-6 -->
+
+        <div class="col-lg-6" style="width:99%;float: left;margin-top: 20px;">
+            <div class="input-group">
+              <span class="input-group-btn">
+                <button class="btn btn-default btn-primary markdownstring" type="button">内容</button>
+              </span>
+              <input type="text" class="form-control"  v-model="article.markdownstring"  placeholder="Content...">
+            </div><!-- /input-group -->
+        </div><!-- /.col-lg-6 -->
+
+       
+        <div class="col-lg-6" style="width:99%;float: left;margin-top: 20px;">
+            <div class="input-group">
+              <span class="input-group-btn">
+                <button class="btn btn-default btn-primary src" type="button">地址</button>
+              </span>
+              <input type="text" class="form-control" placeholder="Src...">
+            </div><!-- /input-group -->
+        </div><!-- /.col-lg-6 -->
+
+      </div><!-- /.row -->
+
+
+    </div >
+
 <script>
 
 var mdvue = new Vue({
@@ -103,5 +168,49 @@ var mdvue = new Vue({
 
 });
 
+var addmdvue = new Vue({
+
+    el:'#addmd_div',
+    data: {
+        article: [
+            {blogtitle:"a",writetime:"v",markdowninfo:"c",markdownstring:"",src:"",catogery:""},
+         ],
+         
+    },
+    methods: {
+        getmd: function() {
+            
+        },
+    }
+
+});
+
+function addmd() {
+
+    var s = $('#addmd_div').html();
+    // var article = {blogtitle:"",writetime:"",markdowninfo:"",markdownstring:""};
+    
+
+    // alert(s);
+    layer.open({
+        title:"添加文章",
+        btn: ['确定', '取消'],
+        area: ['575px', '350px'], //宽高
+        // content: '<div style:"width:100%; height:300px;" > </div>',
+        content: s,
+        
+        btn1: function() {
+            // article.blogtitle = $('#title_input').html();
+            // article.markdowninfo = $('.markdowninfo').text();
+            // console.log(article.blogtitle);
+            alert(addmdvue.article.blogtitle);
+            layer.msg("添加成功");
+            // location.reload();
+        },
+        btn2: function() {
+
+        }
+    })
+}
 
 </script>
