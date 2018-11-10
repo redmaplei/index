@@ -2,7 +2,8 @@
 #blog_read_top_img_div {
     width: 100%;
     height: 400px;
-    overflow: hidden;
+    /* /* overflow: hidden; */
+    overflow:hidden;
 }
 
 #blog_read_top_img {
