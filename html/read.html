@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>blogread</title>
 
-    <link rel="stylesheet" href="../css/blogread.css">
+    <link rel="stylesheet" href="../css/read.css">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/bootstrap.css">
     <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
@@ -13,24 +13,10 @@
     <script type="text/javascript" src="../js/vue.js"></script>
     <script type="text/javascript" src="../js/jquery.waypoints.min.js"></script>
 
-    <script type="text/javascript" src="../js/blogread.js"></script>
+    <script type="text/javascript" src="../js/read.js"></script>
 
-    <!-- 引入样式文件 -->
-    <link rel="stylesheet" href="../editormd/examples/css/style.css">
-    <link rel="stylesheet" href="../editormd/css/editormd.preview.css">
-
-    <!-- 引入js文件 -->
-    <script src="../editormd/examples/js/jquery.min.js"></script>
-    <script src="../editormd/lib/marked.min.js"></script>
-    <script src="../editormd/lib/prettify.min.js"></script>
-    <script src="../editormd/lib/raphael.min.js"></script>
-    <script src="../editormd/lib/underscore.min.js"></script>
-    <script src="../editormd/lib/sequence-diagram.min.js"></script>
-    <script src="../editormd/lib/flowchart.min.js"></script>
-    <script src="../editormd/lib/jquery.flowchart.min.js"></script>
-    <script src="../editormd/editormd.js"></script>
-
-
+    
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
 </head>
 <body>
@@ -74,31 +60,11 @@
             </h6>
         </div>
 
-                <!-- {{ blogdata }} -->
-                <!-- v-model="blogdata" -->
-
-        <div id="blog_read_editormd">
-            
-
-            <textarea id="read_textera"  style="width:1000px; height:800px; display: none">       
-
-            </textarea>
-
-            
-           
-
-        </div>
+        <div id="content" style="width:1000px; height:800px;"></div> 
 
         
     </div>
 
-
-    <br>
-    <br>
-    <br>
-    <br>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <div id="content"></div>
     
       <script>
     

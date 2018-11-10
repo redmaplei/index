@@ -190,9 +190,10 @@
                  * 这种方式不成功
                  * @type {string}
                  */
-                blogtitle = el.innerText;
+                blogtitle = el.innerText;   // 拿到的字符串前面有空格，不懂
+                blogtitle = blogtitle.replace(/(^\s*)/g, "");   // 去除前面的空格
                 localStorage.setItem("blogtitle", blogtitle);
-                window.location.href = "html/blogread.html";
+                window.location.href = "html/read.html";
             }
         }
     });
