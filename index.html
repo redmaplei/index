@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>001</title>
-    <link rel="stylesheet" href="../css/_001_blog_page_css.css">
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/bootstrap.css">
-    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="../js/vue-resource.min.js"></script>
-    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../js/vue.js"></script>
-    <script type="text/javascript" src="../js/jquery.waypoints.min.js"></script>
+    <link rel="stylesheet" href="css/_001_blog_page_css.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/vue-resource.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/vue.js"></script>
+    <script type="text/javascript" src="js/jquery.waypoints.min.js"></script>
 
-    <script type="text/javascript" src="../js/_001_blog_page_js.js"></script>
+    <script type="text/javascript" src="js/_001_blog_page_js.js"></script>
 </head>
 <body>
 
@@ -24,12 +24,12 @@
 
                 <ul class="nav navbar-nav">
                     <li><a href="index.html">主页</a></li>
-                    <li><a href="../html/article.html">文章</a></li>
-                    <li><a href="../html/img.html">图片</a></li>
+                    <li><a href="html/article.html">文章</a></li>
+                    <li><a href="html/img.html">图片</a></li>
                     <li><a href="">归档</a></li>
                 </ul>
                 <ul class="nav navbar-nav" style="float: right">
-                    <li ><a href="../html/adminlogin.html">-001</a></li>
+                    <li ><a href="html/adminlogin.html">-001</a></li>
                 </ul>
             </div>
         </nav>
@@ -43,17 +43,17 @@
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
                     <div class="item active" style="width: 500px;height: 200px;background-color: #301a18">
-                        <img src="../img/roll1.jpg" alt="...">
+                        <img src="img/roll1.jpg" alt="...">
                         <div class="carousel-caption">
                         </div>
                     </div>
                     <div class="item" style="width: 100%;height: 200px">
-                        <img src="../img/roll2.jpg" alt="...">
+                        <img src="img/roll2.jpg" alt="...">
                         <div class="carousel-caption">
                         </div>
                     </div>
                     <div class="item" style="width: 100%;height: 200px;background-color: black">
-                        <img src="../img/roll3.jpg" alt="...">
+                        <img src="img/roll3.jpg" alt="...">
                         <div class="carousel-caption">
                         </div>
                     </div>
@@ -71,7 +71,7 @@
             <div id="person_infocard" >
                 <div class="single-member effect-1">
                     <div class="member-image">
-                        <img src="../img/member140.png" alt="Member">
+                        <img src="img/member140.png" alt="Member">
                     </div>
                     <div class="member-info">
                         <h4>REDMAPLE</h4>
@@ -205,10 +205,10 @@
         el: '#new_img_show',
         data: {
             imgs: [
-                {src: '../img/roll1.jpg'},
-                {src: '../img/roll2.jpg'},
-                {src: '../img/roll3.jpg'},
-                {src: '../img/roll4.jpg'}
+                {src: 'img/roll1.jpg'},
+                {src: 'img/roll2.jpg'},
+                {src: 'img/roll3.jpg'},
+                {src: 'img/roll4.jpg'}
             ],
         }
     });
@@ -232,7 +232,7 @@
                  */
                 blogtitle = el.innerText;
                 localStorage.setItem("blogtitle", blogtitle);
-                window.location.href = "../html/blogread.html";
+                window.location.href = "html/blogread.html";
             }
         }
     });
