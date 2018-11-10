@@ -173,46 +173,6 @@
 
 <script>
 
-    var user_login = new Vue({
-        el: '#exampleModal',
-        data: {
-            user: {username: "", password: ""},
-            login_tip: "",
-        },
-        methods: {
-            login: function () {
-
-                var url = "http://localhost:8080/login/login?" + "username=" + this.user.username + "&password=" + this.user.password;
-                $.ajax({
-                    url: url,
-                    type: 'GET',
-                    contentType: 'application/json; charset=utf-8',
-//                        data:JSON.stringify(this.user),
-                    success: function (data) {
-                        console.log(data);
-                        this.login_tip = data;
-                    }
-                });
-
-            }
-        },
-        created: function () {
-
-        },
-    });
-
-    var img_show_vue = new Vue({
-        el: '#new_img_show',
-        data: {
-            imgs: [
-                {src: 'img/roll1.jpg'},
-                {src: 'img/roll2.jpg'},
-                {src: 'img/roll3.jpg'},
-                {src: 'img/roll4.jpg'}
-            ],
-        }
-    });
-
     var wenzan_vue = new Vue({
         el: '#wenzan_div',
         data: {

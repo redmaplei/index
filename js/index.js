@@ -9,9 +9,7 @@ $(function () {
         contentType:'application/json; charset=UTF-8',
         success:function (data) {
 
-            console.log(data);
             wenzan_vue.wenzans = data;
-            // console.log("sd"+wenzan_vue.wenzans);
         },
         error: function() {
             console.log("xsss");
