@@ -95,7 +95,7 @@
           </div><!-- /input-group -->
         </div><!-- /.col-lg-6 -->
 
-        <div class="col-lg-6" style="width:40%;float: left;margin-top: 20px;">
+        <div class="col-lg-6" style="width:45%;float: left;margin-top: 20px;">
                 <div class="input-group">
                   <span class="input-group-btn">
                     <button class="btn btn-default btn-primary catogery" type="button">分类</button>
@@ -104,7 +104,7 @@
                 </div><!-- /input-group -->
               </div><!-- /.col-lg-6 -->
 
-        <div class="col-lg-6" style="width:60%;float: left; margin-top: 20px;">
+        <div class="col-lg-6" style="width:55%;float: left; margin-top: 20px;">
             <div class="input-group">
               <span class="input-group-btn">
                 <button class="btn btn-default btn-primary writetime" type="button">时间</button>
@@ -135,8 +135,12 @@
       </div><!-- /.row -->
 
 
-    </div >
+        
 
+    </div >
+    <p id="ts">
+            {{ article.a }}
+      </p>
 <script>
 
 var urlread = "http://127.0.0.1:8080/md/getnewmd";
@@ -148,8 +152,6 @@ $.ajax({
     contentType:'application/json; charset=UTF-8',
     success:function (data) {
         mdvue.articles = data;
-        // console.log("dfsdfs");
-        // console.log(mdvue.articles);
     },
     error: function() {
         console.log("xsss");
@@ -162,8 +164,8 @@ var mdvue = new Vue({
     el:'#mdtable',
     data: {
         articles: [
-            {blogtitle:"asds",writetime:"",markdowninfo:"",id:"23"},
-            {blogtitle:"区块链",writetime:"",markdowninfo:"",id:"234"},
+            {id:"23",blogtitle:"asds",writetime:"",markdowninfo:""},
+            {id:"234",blogtitle:"区块链",writetime:"",markdowninfo:""},
         ],
     },
     methods:{
@@ -187,21 +189,33 @@ var mdvue = new Vue({
 });
 
 var addmdvue = new Vue({
-
-    el:'#addmd_div',
+    el:'#ts',
     data: {
         article: [
-            {blogtitle:"a",writetime:"v",markdowninfo:"c",src:"",catogery:""},
-         ],
-         
+            {id:"23",blogtitle:"asds",writetime:"",markdowninfo:""},
+        ],
+        a:"xxxxxcvv",
     },
-    methods: {
-        getmd: function() {
-            
-        },
-    }
-
+    
 });
+
+// var addmdvue = new Vue({
+
+//     // el:'#addmd_div', 
+//     el:'#ts',
+//     data: {
+//         article: [
+//             {blogtitle:"xxxxx",writetime:"v",markdowninfo:"c",src:"",catogery:""},
+//          ],
+         
+//     },
+//     methods: {
+//         getmd: function() {
+            
+//         },
+//     }
+
+// });
 
 function addmd() {
 
@@ -221,9 +235,26 @@ function addmd() {
             // article.blogtitle = $('#title_input').html();
             // article.markdowninfo = $('.markdowninfo').text();
             // console.log(article.blogtitle);
-            alert(addmdvue.article.blogtitle);
+            console.log(addmdvue.article.blogtitle);
 
-            
+            var urlread = "http://127.0.0.1:8080/md/uploadmd";
+
+            // $.ajax({
+            //     url:urlread,
+            //     type:'GET',
+            //     dataType:'json',
+            //     data:{markdown:addmdvue.article},
+            //     contentType:'application/json; charset=UTF-8',
+            //     success:function (data) {
+            //         mdvue.articles = data;
+            //         // console.log("dfsdfs");
+            //         // console.log(mdvue.articles);
+            //     },
+            //     error: function() {
+            //         console.log("xsss");
+            //     }
+
+            // });
 
             layer.msg("添加成功");
             // location.reload();
