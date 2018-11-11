@@ -85,8 +85,15 @@
         <span>评论区</span>
         <br>
         <br>
-        <hr style="border: 1.2px solid red">
     </div>
+
+    <hr style="border: 1.2px solid red">
+    
+    <textarea id="comment_text">
+暂时没开
+    </textarea>
+
+    <button class="btn" style="float:right;">提交</button>
 
 </div>
 
@@ -112,6 +119,21 @@
         },
 
     });
+
+    var comment_vue = new Vue({
+
+        el:'#comment',
+        data:{
+            comment:"",
+        },
+        methods: {
+            comment: function() {
+                console.log(comment);
+            },
+        }
+
+    });
+
 
 </script>
 

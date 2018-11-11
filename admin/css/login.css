@@ -8,7 +8,7 @@ body{
     height: 100%;
 
 
-    background: url("../img/login.jpg");
+    background: url("../../img/login.jpg");
 
     background-repeat:no-repeat ;
 
@@ -71,7 +71,6 @@ body{
     margin-top: 10px;
     width:100px;
     height:30px;
-    float: right;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border-radius:5px;
@@ -81,5 +80,14 @@ body{
     filter: Alpha(Opacity=50);
     -moz-opacity: 0.5;
     opacity: 0.85;
+    float: right;
+
+}
+
+#login-tip {
+    float: left;
+    margin-left: 10px;
+    margin-top: 10px;
+    color: yellow;
 
 }

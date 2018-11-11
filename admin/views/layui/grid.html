@@ -82,7 +82,7 @@
               <button class="btn btn-default btn-primary" type="button">标题</button>
             </span>
             <input type="text" v-model="article.blogtitle" class="form-control blogtitle" placeholder="Title...">
-            <span> -- {{ article.blogtitle }} </span>
+            <span> {{ article.blogtitle }} </span>
         </div><!-- /input-group -->
         </div><!-- /.col-lg-6 -->
 
@@ -139,20 +139,38 @@
 
 <script>
 
+var urlread = "http://127.0.0.1:8080/md/getnewmd";
+
+$.ajax({
+    url:urlread,
+    type:'GET',
+    dataType:'json',
+    contentType:'application/json; charset=UTF-8',
+    success:function (data) {
+        mdvue.articles = data;
+        // console.log("dfsdfs");
+        // console.log(mdvue.articles);
+    },
+    error: function() {
+        console.log("xsss");
+    }
+
+});
+
 var mdvue = new Vue({
 
     el:'#mdtable',
     data: {
         articles: [
-            {blogtitle:"asds",writetime:"",markdowninfo:"",markdownstring:"",id:"23"},
-            {blogtitle:"区块链",writetime:"",markdowninfo:"",markdownstring:""},
+            {blogtitle:"asds",writetime:"",markdowninfo:"",id:"23"},
+            {blogtitle:"区块链",writetime:"",markdowninfo:"",id:"234"},
         ],
     },
     methods:{
         
         jumpreadmd: function(blogtitle) {
             localStorage.setItem("blogtitle",blogtitle);
-            window.open("../html/blogread.html");
+            window.open("../html/read.html");
             // window.location.href="../html/blogread.html";
 
         },
@@ -162,7 +180,7 @@ var mdvue = new Vue({
         },
 
         deletemd: function(blogtitle) {
-            alert(blogtitle);
+            alert("删除" + blogtitle + "? 暂时不删除");
         }
     }
 
@@ -173,7 +191,7 @@ var addmdvue = new Vue({
     el:'#addmd_div',
     data: {
         article: [
-            {blogtitle:"a",writetime:"v",markdowninfo:"c",markdownstring:"",src:"",catogery:""},
+            {blogtitle:"a",writetime:"v",markdowninfo:"c",src:"",catogery:""},
          ],
          
     },
@@ -204,6 +222,9 @@ function addmd() {
             // article.markdowninfo = $('.markdowninfo').text();
             // console.log(article.blogtitle);
             alert(addmdvue.article.blogtitle);
+
+            
+
             layer.msg("添加成功");
             // location.reload();
         },

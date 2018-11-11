@@ -9,8 +9,10 @@
      success:function (data) {
 
          console.log(data);
+         console.log(2121);
          mdvue.articles = data;
-         alert(data);
+         
+         console.log(2121);
          // console.log("sd"+wenzan_vue.wenzans);
      },
      error: function() {

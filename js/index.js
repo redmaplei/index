@@ -8,7 +8,6 @@ $(function () {
         dataType:'json',
         contentType:'application/json; charset=UTF-8',
         success:function (data) {
-
             wenzan_vue.wenzans = data;
         },
         error: function() {
