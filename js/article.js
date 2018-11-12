@@ -14,7 +14,7 @@ $(function () {
  */
 function pagemd(page) {
 
-    var url = "http://localhost:8080/md/getPagemd?page="+page;
+    var url = "http://139.199.89.116:8080/md/getPagemd?page="+page;
     $.ajax({
         url:url,
         type:'GET',

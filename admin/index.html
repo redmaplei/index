@@ -75,7 +75,7 @@
                     return;
                 }
 
-            //    Vue.$http.get('http://127.0.0.1:8080/user/login',{
+            //    Vue.$http.get('http://139.199.89.116:8080/user/login',{
             //         params: {
             //             usr: loginvue.usr,
             //             passwd: loginvue.passwd
@@ -87,8 +87,8 @@
             //             console.log(res);
             //     });
 
-                var urlread = "http://127.0.0.1:8080/user/login?usr="+loginvue.usr+"&passwd="+loginvue.passwd;
-                var urls = "http://127.0.0.1:8080/md/getnewmd";
+                var urlread = "http://139.199.89.116:8080/user/login?usr="+loginvue.usr+"&passwd="+loginvue.passwd;
+                var urls = "http://139.199.89.116:8080/md/getnewmd";
                 $.ajax({
                     url:urls,
                     type:'GET',

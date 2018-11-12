@@ -1,6 +1,6 @@
 $(function () {
 
-    var urlread = "http://127.0.0.1:8080/md/getnewmd";
+    var urlread = "http://139.199.89.116:8080/md/getnewmd";
 
     $.ajax({
         url:urlread,
