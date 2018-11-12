@@ -81,9 +81,12 @@
 
     </div>
 
-    <div id="footer">
-
+    <div style="width: 100%; height: 50px; line-height: 50px; text-align: center; background-color: grey">
+        Foreign Exchange App-001<a href="www.redwys.xyz"><b>redmaple</b></a>
     </div>
+    <!-- <div id="footer">
+
+    </div> -->
 
 
     <script>
@@ -107,8 +110,9 @@
                      * @type {string}
                      */
                     blogtitle = el.innerText;
-                    localStorage.setItem("blogtitle",blogtitle);
-                    window.location.href="../html/blogread.html";
+                    blogtitle = blogtitle.replace(/(^\s*)/g, "");   // 去除前面的空格
+                    localStorage.setItem("blogtitle", blogtitle);
+                    window.location.href = "read.html";
                 }
 
             }
