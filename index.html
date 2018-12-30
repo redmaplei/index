@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>001</title>
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="js/vue-resource.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/vue.js"></script>
-    <script type="text/javascript" src="js/jquery.waypoints.min.js"></script>
+    <link rel="stylesheet" href="css/read/index.css">
+    <link rel="stylesheet" href="css/framework/bootstrap.min.css">
+    <link rel="stylesheet" href="css/framework/bootstrap.css">
+    <script type="text/javascript" src="js/framework/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/framework/vue-resource.min.js"></script>
+    <script type="text/javascript" src="js/framework/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/framework/vue.js"></script>
+    <script type="text/javascript" src="js/framework/jquery.waypoints.min.js"></script>
+    <script type="text/javascript" src="js/read/index.js"></script>
 
-    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/read/commons.js"></script>
+
 </head>
 <body>
 
@@ -192,8 +194,10 @@
                  */
                 blogtitle = el.innerText;   // 拿到的字符串前面有空格，不懂
                 blogtitle = blogtitle.replace(/(^\s*)/g, "");   // 去除前面的空格
+
                 localStorage.setItem("blogtitle", blogtitle);
                 window.location.href = "html/read.html";
+                
             }
         }
     });
