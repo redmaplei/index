@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>img</title>
@@ -11,27 +12,20 @@
     <script type="text/javascript" src="/js/framework/vue.js"></script>
 
     <script type="text/javascript" src="js/read/commons.js"></script>
-    
+
 </head>
+
 <body>
-
-<!-- <div id="head_img">
-    <img src="/img/head.jpg">
-</div> -->
-
-
-    <div id="head_background" >
+    <div id="head_background">
         <div id="body_navigation_bar">
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
-
                     <ul class="nav navbar-nav">
                         <li><a href="/index.html">主页</a></li>
                         <li><a href="/html/article.html">文章</a></li>
                         <li><a href="/html/img.html">图片</a></li>
                         <li><a href="">归档</a></li>
                     </ul>
-
                 </div>
             </nav>
         </div>
@@ -40,46 +34,33 @@
     <div id="body">
         <div class="content_div" id="new_img_show">
 
-            <div class="row" >
-                <div class="col-md-5 new_img_show_s"  v-for="img in imgs">
-                    <img  class="img_show" v-bind:src=" img.src "/>
+            <div class="row">
+                <div class="col-md-5 new_img_show_s" v-for="img in imgs">
+                    <img class="img_show" v-bind:src=" img.src " />
                 </div>
             </div>
         </div>
-
         <hr>
-
     </div>
 
-    <!-- <div id="blog_read_footer">
-
-    </div> -->
     <div style="width: 100%; height: 50px; line-height: 50px; text-align: center; background-color: grey">
         Foreign Exchange App-001<a href="www.redwys.xyz"><b>redmaple</b></a>
     </div>
 
-</div>
+    <script>
+        var img_show_vue = new Vue({
+            el: '#new_img_show',
+            data: {
+                imgs: [
+                    { src: '/img/roll1.jpg' },
+                    { src: '/img/roll2.jpg' },
+                    { src: '/img/roll3.jpg' },
+                    { src: '/img/roll4.jpg' }
+                ],
+            }
+        });
 
-<script>
-
-    var img_show_vue = new Vue({
-        el:'#new_img_show',
-        data:{
-            imgs: [
-                { src: '/img/roll1.jpg' },
-                { src: '/img/roll2.jpg' },
-                { src: '/img/roll3.jpg' },
-                { src: '/img/roll4.jpg' }
-            ],
-        }
-    });
-
-
-
-</script>
+    </script>
 
 </body>
-
-
-
 </html>

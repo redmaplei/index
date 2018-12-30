@@ -1,6 +1,8 @@
-$(function () {
 
+// 博客阅读
+$(function () {
     var blogtitle = localStorage.getItem("blogtitle");
+    
     $.ajax({
         url:config.url.getmd,
         type:'GET',
@@ -12,7 +14,7 @@ $(function () {
             document.getElementById('content').innerHTML = marked(blog_read_info_vue.article.mdContent);
         },
         error: function() {
-            console.log("xsss");
+            console.log("服务器获取失败");
         }
     });
 
